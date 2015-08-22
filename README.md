@@ -7,7 +7,7 @@ It provides Special Page entrypoint & endpoint for authentication handling via O
 
 1. Put **Opauth** folder into **extensions** folder
 2. Add these lines into **LocalSettings.php**:
-```
+```php
 require_once "$IP/extensions/Opauth/Opauth.php";
 $wgOpauthConfig['security_salt'] = 'YOUR_RANDOM_SALT_STRING';
 $wgOpauthConfig['Strategy'] = array(
@@ -37,10 +37,10 @@ $wgOpauthConfig['Strategy'] = array(
 ```
 3. For more configuration information please see https://github.com/opauth/opauth
 5. Use code below to fetch social-auth url:
-```
+```php
 OpauthHelper::getLoginLink('facebook'); // where 'facebook' is provider name
 ```
 4. Create your own extension which listen **OpauthUserAuthorized** hook. This hook will be called with parameters listed below in sample callback function:
-```
+```php
 public static function onOpauthUserAuthorized( $provider, $uid, $info, $raw ) { ... }
 ```
