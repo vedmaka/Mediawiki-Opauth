@@ -83,16 +83,16 @@ class OpauthSpecial extends UnlistedSpecialPage {
             die();
         }
 
-        echo( '<strong style="color: green;">OK: </strong>Auth response is validated.'."<br>\n" );
+        //echo( '<strong style="color: green;">OK: </strong>Auth response is validated.'."<br>\n" );
         /**
          * It's all good. Go ahead with your application-specific authentication logic
          */
 
-        echo "<pre>".print_r($response,1)."</pre>";
-        die();
+        // echo "<pre>".print_r($response,1)."</pre>";
+        // die();
 
         wfRunHooks('OpauthUserAuthorized', array(
-            $response['auth']['provider'],
+            strtolower( $response['auth']['provider'] ),
             $response['auth']['uid'],
             $response['auth']['info'],
             $response['auth']
