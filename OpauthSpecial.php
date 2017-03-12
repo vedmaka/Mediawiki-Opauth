@@ -42,7 +42,10 @@ class OpauthSpecial extends UnlistedSpecialPage {
 
         switch($Opauth->env['callback_transport']){
             case 'session':
-                session_start();
+            	if( empty( session_id() ) ) {
+		            wfSetupSession();
+            		//session_start();
+	            }
                 $response = $_SESSION['opauth'];
                 unset($_SESSION['opauth']);
                 break;

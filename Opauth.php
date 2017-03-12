@@ -43,7 +43,7 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgExtensionMessagesFiles['Opauth'] = dirname( __FILE__ ) . '/Opauth.i18n.php';
 
 /* Autoload classes */
-$wgAutoloadClasses['OpauthHelper'] = dirname( __FILE__ ) . '/OpauthHelper.class.php';
+$wgAutoloadClasses['OpauthHelper'] = dirname( __FILE__ ) . '/OpauthHelper.php';
 $wgAutoloadClasses['Opauth'] = dirname( __FILE__ ) . '/lib/Opauth/Opauth.php';
 $wgAutoloadClasses['OpauthStrategy'] = dirname( __FILE__ ) . '/lib/Opauth/OpauthStrategy.php';
 
