@@ -64,7 +64,7 @@ class OpauthSpecial extends UnlistedSpecialPage {
          * Check if it's an error callback
          */
         if (array_key_exists('error', $response)){
-            die( '<strong style="color: red;">Authentication error: </strong> Opauth returns error auth response.'."<br>\n" );
+            echo( '<strong style="color: red;">Authentication error: </strong> Opauth returns error auth response.'."<br>\n" );
             print_r($response);
             die();
         }
